@@ -1,0 +1,64 @@
+---
+import SidebarItem from "./SidebarItem.astro";
+import ToggleIcon from "../icons/ToggleIcon.astro";
+---
+
+<button
+  id="sidebar-toggle"
+  aria-controls="sidebar-component"
+  type="button"
+  class="inline-flex items-center p-2 mt-2 ms-3 text-sm sm:hidden focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600"
+>
+  <span class="sr-only">Open sidebar</span>
+  <ToggleIcon />
+</button>
+
+<aside
+  id="sidebar-component"
+  class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+  aria-label="Sidebar"
+>
+  <div class="h-full px-3 py-4 overflow-y-auto bg-gray-800">
+    <a href="/docs" class="flex items-center ps-2.5 mb-5">
+      <img src="./logo.webp" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
+      <span
+        class="self-center text-xl font-semibold whitespace-nowrap text-white"
+        >Avatar API</span
+      >
+    </a>
+    <nav>
+      <SidebarItem href="/" title="Home" />
+      <SidebarItem href="/contact" title="Contact" />
+    </nav>
+  </div>
+</aside>
+
+<script>
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const logoSidebar = document.getElementById('sidebar-component');
+
+  sidebarToggle!.addEventListener('click', (event) => {
+    event.stopPropagation();
+    toggleSidebar();
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!logoSidebar!.contains(event.target as Node) && event.target !== sidebarToggle) {
+      logoSidebar!.classList.add('-translate-x-full');
+      logoSidebar!.classList.remove('-translate-x-0');
+    }
+  });
+
+  function toggleSidebar() {
+    const isSidebarVisible = logoSidebar!.classList.contains('-translate-x-0');
+
+    if (isSidebarVisible) {
+      logoSidebar!.classList.add('-translate-x-full');
+      logoSidebar!.classList.remove('-translate-x-0');
+    } else {
+      logoSidebar!.classList.add('-translate-x-0');
+      logoSidebar!.classList.remove('-translate-x-full');
+    }
+  }
+</script>
+

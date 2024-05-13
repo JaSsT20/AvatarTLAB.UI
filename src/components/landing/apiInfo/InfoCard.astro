@@ -1,0 +1,6 @@
+---
+const { bgColor } = Astro.props;
+---
+<div class={`${bgColor} text-white p-4 rounded-lg transition-all duration-500 hover:scale-105`}>
+  <slot/>
+</div>

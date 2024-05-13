@@ -1,0 +1,7 @@
+---
+const { cardColor, cardTitle } = Astro.props;
+---
+<div class={`${cardColor} text-white p-4 rounded-lg mb-8`}>
+  <h2 class="text-2xl md:text-2xl font-bold">{cardTitle}</h2>
+  <slot/>
+</div>

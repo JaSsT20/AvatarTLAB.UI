@@ -1,0 +1,94 @@
+---
+import SectionContainer from "../components/landing/SectionContainer.astro";
+import EndpointCard from "../components/landing/EndpoitInfo/EnpointCard.astro";
+import EndpointItem from "../components/landing/EndpoitInfo/EndpointItem.astro";
+import Layout from "../layouts/Layout.astro";
+import InfoCard from "../components/landing/apiInfo/InfoCard.astro";
+import InfoContent from "../components/landing/apiInfo/InfoContent.astro";
+---
+
+<Layout title="Avatar: The Last Airbender API">
+  <main class="px-4">
+    <SectionContainer class="md:pt-44 pt-32">
+      <h1
+        class="md:text-4xl text-2xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#E5A052] via-[#E46C5B] to-[#0E579A]"
+      >
+        Avatar: The Last Airbender API
+      </h1>
+      <p class="mt-4 md:text-lg text-center text-pretty">
+        Welcome to the <strong>Avatar: The Last Airbender API</strong>. This API
+        provides information about the characters, locations, and episodes from
+        the Avatar: The Last Airbender TV show.
+      </p>
+    </SectionContainer>
+
+    <SectionContainer>
+      <h2 class="text-3xl font-bold text-center text-[#0E579A]">About the API</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        <InfoCard bgColor="bg-[#E5A052]">
+          <InfoContent
+            title="Get Character's information"
+            text="Get information about the characters from the show."
+          />
+        </InfoCard>
+
+        <InfoCard bgColor="bg-[#0E579A]">
+          <InfoContent
+            title="Get Episode's information"
+            text="Get information about the episodes from the show."
+          />
+        </InfoCard>
+        
+        <InfoCard bgColor="bg-[#E46C5B]">
+          <InfoContent
+            title="To know"
+            text=`For various reasons we do not permit any kind of POST, PUT, or DELETE requests on our API.
+            For those requests, we just send the correct HTTP status code and a message.`
+          />
+        </InfoCard>
+
+        <InfoCard bgColor="bg-red-500">
+          <InfoContent
+            title="Important"
+            text=`This API exclusively includes characters from
+						Avatar: The Last Airbender, and does not encompass characters
+						or versions from The Legend of Korra.`
+          />
+        </InfoCard>
+
+      </div>
+    </SectionContainer>
+
+    <SectionContainer>
+      <h2 class="text-3xl font-bold text-center text-[#0E579A]">How to use?</h2>
+      <h3 class="mt-4 text-center text-pretty mb-8 text-xl">
+        To get the information, you can use the following endpoints
+      </h3>
+      <EndpointCard cardTitle="Characters" cardColor="bg-[#E5A052]">
+        <EndpointItem
+          color="bg-[#E46C5B]"
+          title="To get the list of characters, you can use the following endpoint"
+          content="GET /api/characters"
+        />
+        <EndpointItem
+          color="bg-[#E46C5B]"
+          title="To get a certain character by it's id, you can use the following endpoint"
+          content="GET /api/characters/:id"
+        />
+        <EndpointItem
+          color="bg-[#E46C5B]"
+          title="To get a certain character by it's name, you can use the following endpoint"
+          content="GET /api/characters/:id"
+        />
+      </EndpointCard>
+      <p class="text-pretty text-center">
+        These endpoints returns a JSON that you can use in your app to get any
+        information about any character that we have available. To get more
+        information please visit our <a
+          href="/docs"
+          class="text-blue-600 underline">docs</a
+        >.
+      </p>
+    </SectionContainer>
+  </main>
+</Layout>

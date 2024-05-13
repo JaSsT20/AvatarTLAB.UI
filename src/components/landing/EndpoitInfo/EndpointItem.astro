@@ -1,0 +1,9 @@
+---
+const { color, title, content } = Astro.props;
+---
+<p class="mt-2">
+  {title}
+</p>
+<pre class={`${color} mt-2 pt-2 pb-2 text-white rounded-lg text-pretty overflow-clip`}>
+  {content}
+</pre>

@@ -1,0 +1,36 @@
+---
+const navItems = [
+  {
+    title: "Docs",
+    label: "docs",
+    url: "#docs",
+  },
+  {
+    title: "GitHub",
+    label: "gitHub",
+    url: "#gitHub",
+  },
+  {
+    title: "Buy me a coffee",
+    label: "buy-me-a-coffee",
+    url: "#",
+  },
+];
+---
+<footer
+  class="max-w-screen-sm flex flex-wrap items-center justify-end mx-auto p-4"
+>
+  <div class="flex items-center space-x-4">
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 text-black/50"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+  </div>
+</footer>

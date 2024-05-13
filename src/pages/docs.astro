@@ -1,0 +1,95 @@
+---
+import SectionContainer from "../components/landing/SectionContainer.astro";
+import CharacterIcon from "../icons/CharacterIcon.astro";
+import DocsLayout from "../layouts/DocsLayout.astro";
+import EnpointCard from "../components/landing/EndpoitInfo/EnpointCard.astro";
+import EndpointItem from "../components/landing/EndpoitInfo/EndpointItem.astro";
+---
+
+<DocsLayout title="Avatar: The Last Airbender API docs">
+  <main class="px-4 flex justify-center md:ml-64">
+    <SectionContainer>
+      <div class="flex items-center">
+        <CharacterIcon class="size-8 stroke-[#0E579A]" />
+        <h1 class="text-4xl font-semibold text-[#0E579A]">Character</h1>
+      </div>
+      <p class="mt-5">
+        The character object represents a character in the <strong
+          >Avatar: The Last Airbender</strong
+        > universe.
+      </p>
+      <EnpointCard cardTitle="[GET] characters" cardColor="bg-gray-500" class="text-black">
+        <EndpointItem
+          color="bg-gray-600"
+          title="[List] To get the list of characters, you can use the following endpoint"
+          content="GET /api/characters"
+        />
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a single character by using it's Id, you can use the following endpoint"
+          content="GET /api/characters/byId/1"
+        />
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a single character by using it's Name, you can use the following endpoint"
+          content="GET /api/characters/byName/Aang"
+        />
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's Surname, you can use the following endpoint"
+          content="GET /api/characters/bySurname/Beifong"
+        />
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's Age, you can use the following endpoint"
+          content="GET /api/characters/byAge/12"
+        />
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's primary element, you can use the following endpoint"
+          content="GET /api/characters/byElement/Water"
+        />
+
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's Nation, you can use the following endpoint"
+          content="GET /api/characters/byNation/Fire Nation"/>
+
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's Born year, you can use the following endpoint"
+          content="GET /api/characters/byBorn/12 BG"
+        />
+
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's HairColor, you can use the following endpoint"
+          content="GET /api/characters/byHairColor/Brown"
+        />
+
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's SkinColor, you can use the following endpoint"
+          content="GET /api/characters/bySkinColor/light"
+        />
+
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of characters by using it's EyeColor, you can use the following endpoint"
+          content="GET /api/characters/bySkinColor/Gray"
+        />
+
+        <EndpointItem
+          color="bg-gray-600"
+          title="To get a list of Aliases for a character by using it's Id, you can use the following endpoint"
+          content="GET /api/characters/aliases/1"
+        />
+
+
+
+        
+        
+      </EnpointCard>
+    </SectionContainer>
+  </main>
+</DocsLayout>
