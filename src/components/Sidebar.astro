@@ -1,6 +1,7 @@
 ---
 import SidebarItem from "./SidebarItem.astro";
 import ToggleIcon from "../icons/ToggleIcon.astro";
+import astroConfig from "../../astro.config.mjs";
 ---
 
 <button
@@ -19,16 +20,15 @@ import ToggleIcon from "../icons/ToggleIcon.astro";
   aria-label="Sidebar"
 >
   <div class="h-full px-3 py-4 overflow-y-auto bg-gray-800">
-    <a href="/docs" class="flex items-center ps-2.5 mb-5">
-      <img src="./logo.webp" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
+    <a href={`${astroConfig.base}/docs`} class="flex items-center ps-2.5 mb-5">
+      <img src={`${astroConfig.base}/logo.webp`} class="h-6 me-3 sm:h-7" alt="App Logo" />
       <span
         class="self-center text-xl font-semibold whitespace-nowrap text-white"
         >Avatar API</span
       >
     </a>
     <nav>
-      <SidebarItem href="/" title="Home" />
-      <SidebarItem href="/contact" title="Contact" />
+      <SidebarItem href={astroConfig.base} title="Home" />
     </nav>
   </div>
 </aside>
